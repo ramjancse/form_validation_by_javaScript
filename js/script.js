@@ -41,7 +41,6 @@ function getFieldName(input){
     return input.id.toUpperCase().charAt(0) + input.id.slice(1) ;
 }
 
-
 function checkLength(input, min, max){
    if(input.value.length < min){
         showError(input, `${getFieldName(input)} must be atleast ${min} characters`);
@@ -52,14 +51,11 @@ function checkLength(input, min, max){
    }
 }
 
-
-
 //event listener
 form.addEventListener('submit', function(e){
     e.preventDefault();
     checkRequired([username, fullname, email, password, password2  ]);
     checkLength(username, 3, 15);
     checkLength(password, 8, 32); 
-    
 });
 
